@@ -15,45 +15,18 @@ The following schematic illustrates the `SpatialExperiment` class structure.
 
 ## Installation
 
-The `SpatialExperiment` package can be installed from Bioconductor. Note that Bioconductor follows a "release" and "development" schedule, where the release version is considered to be stable and updated every 6 months, and the development version contains latest updates (and then becomes the next release version every 6 months).
-
-
-### Release version
-
-To install the stable release version, install the latest release version of R from [CRAN](https://cran.r-project.org/), then install the Bioconductor package installer and the `SpatialExperiment` package as follows.
+The current release version of the `SpatialExperiment` package can be installed from Bioconductor as follows. This is the recommended approach for most users.
 
 ```
 install.packages("BiocManager")
 BiocManager::install("SpatialExperiment")
 ```
 
-
-### Development version
-
-To install the development version, there are two options.
-
-(i) Install the development version of the `SpatialExperiment` package from GitHub, using a standard installation of the release version of R from [CRAN](https://cran.r-project.org/):
+The latest development version can be installed from the [development version of Bioconductor](https://contributions.bioconductor.org/use-devel.html) or from GitHub (which may also require some dependency packages to be installed manually).
 
 ```
-install.packages("remotes")
 remotes::install_github("drighelli/SpatialExperiment")
 ```
-
-(ii) Install a complete `devel` version of Bioconductor. This requires first installing the [appropriate version of R (currently R-devel)](http://bioconductor.org/developers/how-to/useDevel/). Then, install the Bioconductor package installer and the development version of the `SpatialExperiment` package:
-
-```
-install.packages("BiocManager")
-BiocManager::install("SpatialExperiment", version = "devel")
-```
-
-
-### Updates in versions 1.5.2 and 1.5.3
-
-In version 1.5.2 the `spatialData` slot was deprecated and columns previously stored in `spatialData` moved to `colData`, and in version 1.5.3 the internal class `SpatialImage` was renamed to `VirtualSpatialImage` to avoid a clash with the same class name in Seurat. We recommend updating to version 1.5.3 (or later) and rebuilding existing objects to ensure longer-term compatibility with future versions.
-
-**To use version 1.5.3 or later (as of March 2022), please follow the installation instructions for the development version above.**
-
-(These updates will also be available in the release version from mid-April 2022 onwards, following the Bioconductor release schedule.)
 
 
 ## Citation
