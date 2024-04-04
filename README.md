@@ -6,7 +6,7 @@
 
 The `SpatialExperiment` package is available from [Bioconductor](https://bioconductor.org/packages/SpatialExperiment).
 
-A vignette containing examples and documentation is available from [Bioconductor](https://bioconductor.org/packages/SpatialExperiment), and additional details are provided in our [preprint](https://www.biorxiv.org/content/10.1101/2021.01.27.428431v3).
+A vignette containing examples and documentation is available from [Bioconductor](https://bioconductor.org/packages/SpatialExperiment), and additional details are provided in our [paper](https://doi.org/10.1093/bioinformatics/btac299).
 
 The following schematic illustrates the `SpatialExperiment` class structure.
 
@@ -58,5 +58,4 @@ In version 1.5.2 the `spatialData` slot was deprecated and columns previously st
 
 ## Citation
 
-Righelli D.\*, Weber L.M.\*, Crowell H.L.\*, Pardo B., Collado-Torres L., Ghazanfar S., Lun A.T.L., Hicks S.C.<sup>+</sup>, and Risso D.<sup>+</sup> (2021), *SpatialExperiment: infrastructure for spatially-resolved transcriptomics data in R using Bioconductor*, [Bioinformatics](https://doi.org/10.1093/bioinformatics/btac299).
-
+Righell D.\*, Weber L.M.\*, Crowell H.L.\*, Pardo B., Collado-Torres L., Ghazanfar S., Lun A.T.L., Hicks S.C.<sup>+</sup>, and Risso D.<sup>+</sup> (2022). *SpatialExperiment: infrastructure for spatially-resolved transcriptomics data in R using Bioconductor.* [Bioinformatics](https://doi.org/10.1093/bioinformatics/btac299), 38(11), 3128-3131.
