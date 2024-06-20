@@ -28,6 +28,16 @@ test_that("getImg,sample_id=image_id=TRUE returns a list", {
     expect_identical(x, y)
 })
 
+test_that("getImg handles non-character sample/image_id (#151)", {
+    . <- (spe$sample_id <- factor(spe$sample_id))[1]
+    expect_silent(getImg(spe, sample_id=.))
+    . <- (spe$sample_id <- as.integer(spe$sample_id))[1]
+    expect_silent(getImg(spe, sample_id=.))
+    . <- imgData(spe)$image_id <- 1
+    expect_silent(getImg(spe, image_id=.))
+    expect_silent(getImg(spe, image_id=as.factor(.)))
+})
+
 # addImg -----------------------------------------------------------------------
 
 test_that("addImg for existing sample_id,image_id throws error", {
