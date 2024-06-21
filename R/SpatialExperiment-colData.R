@@ -24,7 +24,7 @@
 #' @return a \code{\link{SpatialExperiment}} object with updated \code{colData}
 #' 
 #' @examples
-#' example("SpatialExperiment-methods")
+#' example(SpatialExperiment)
 #' 
 #' # empty replacement retains sample identifiers
 #' colData(spe) <- NULL
