@@ -1,5 +1,5 @@
 Package: SpatialExperiment
-Version: 1.15.1
+Version: 1.15.2
 Title: S4 Class for Spatially Resolved -omics Data
 Description: Defines an S4 class for storing data from spatial -omics experiments. 
     The class extends SingleCellExperiment to 
@@ -9,13 +9,17 @@ Description: Defines an S4 class for storing data from spatial -omics experiment
     from the 10x Genomics Visium platform.
 Authors@R: c(
     person("Dario", "Righelli", role=c("aut", "cre"), 
-        email="dario.righelli@gmail.com"), 
+        email="dario.righelli@gmail.com",
+        comment=c(ORCID="0000-0003-1504-3583")),
     person("Davide", "Risso", role=c("aut"), 
-        email="risso.davide@gmail.com"), 
+        email="risso.davide@gmail.com",
+        comment=c(ORCID="0000-0001-8508-5012")),
     person("Helena L.", "Crowell", role=c("aut"), 
-        email="helena.crowell@uzh.ch"), 
+        email="helena.crowell@cnag.eu",
+        comment=c(ORCID="0000-0002-4801-1767")), 
     person("Lukas M.", "Weber", role=c("aut"), 
-        email="lukas.weber.edu@gmail.com"),
+        email="lukas.weber.edu@gmail.com",
+        comment=c(ORCID="0000-0002-3282-1730")), 
     person("Nicholas J.", "Eagles", role=c("ctb"),
         email="nickeagles77@gmail.com"))
 URL: https://github.com/drighelli/SpatialExperiment
@@ -49,6 +53,7 @@ Suggests:
     testthat, 
     BiocStyle, 
     BumpyMatrix, 
-    DropletUtils
+    DropletUtils,
+    VisiumIO
 VignetteBuilder: knitr
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
