@@ -1,4 +1,4 @@
-example(read10xVisium, echo = FALSE)
+example(SpatialExperiment, echo = FALSE)
 
 test_that("colData()<-NULL retains only sample_id", {
     tmp <- spe

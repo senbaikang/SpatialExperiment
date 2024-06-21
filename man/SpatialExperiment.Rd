@@ -98,9 +98,9 @@ this will be assumed from \code{sample_id} and \code{imageSources} instead.
 To combine multiple samples within a single object, see
 \code{\link{combine}}.
 
-For 10x Genomics Visium datasets, the function \code{\link{read10xVisium}}
-can be used to load data and create a \code{SpatialExperiment} object
-directly from Space Ranger output files.
+For 10x Genomics Visium datasets, the \code{\link[VisiumIO]{TENxVisiumList}} 
+and \code{\link[VisiumIO]{import}} functions can be used to load data into 
+a \code{SpatialExperiment} object directly from Space Ranger output files.
 }
 \examples{
 #########################################################
@@ -141,11 +141,19 @@ rd <- S4Vectors::DataFrame(
     sample_id = "foo"))
     
 #############################################################
-# Example 2: Spot-based ST (10x Visium) using 'read10xVisium'
+# Example 2: Spot-based ST (10x Visium) using 'VisiumIO'
 #############################################################
 
-# see ?read10xVisium for details
-example(read10xVisium)
+library(VisiumIO)
+dir <- list.dirs(system.file(
+  file.path("extdata", "10xVisium"),
+  package = "SpatialExperiment"), 
+  recursive = FALSE, full.names = TRUE)
+(spe <- import(TENxVisiumList(
+  sampleFolders = dir, 
+  sample_ids = basename(dir), 
+  processing = "raw", 
+  images = "lowres")))
 
 ##############################
 # Example 3: Molecule-based ST
@@ -205,8 +213,6 @@ y <- as.matrix(unclass(y))
 \code{?"\link{imgData-methods}"}
 
 \code{\link{SpatialImage}}
-
-\code{\link{read10xVisium}}
 }
 \author{
 Dario Righelli and Helena L. Crowell

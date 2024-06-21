@@ -22,7 +22,7 @@
 #' @return a \code{\link{SpatialExperiment}} object
 #' 
 #' @examples
-#' example(read10xVisium)
+#' example(SpatialExperiment)
 #' 
 #' dim(spe)
 #' 

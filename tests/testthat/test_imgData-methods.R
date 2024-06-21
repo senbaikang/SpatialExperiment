@@ -1,4 +1,4 @@
-example(read10xVisium, echo = FALSE)
+example(SpatialExperiment, echo = FALSE)
 
 test_that("getImg/imgRaster/Source w/o imgData return NULL", {
     x <- spe

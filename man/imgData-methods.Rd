@@ -90,7 +90,7 @@ the image-related data stored inside a \code{SpatialExperiment}'s
 }
 }
 \examples{
-example(read10xVisium)
+example(SpatialExperiment)
 
 # 'SpatialImage' accession
 (spi <- getImg(spe))

@@ -1,4 +1,4 @@
-example(read10xVisium, echo = FALSE)
+example(SpatialExperiment, echo = FALSE)
 
 test_that("rotateCoords, non-null sample_id", {
     #   Subset followed by identity rotation should be equivalent to simply

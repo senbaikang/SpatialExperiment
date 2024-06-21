@@ -19,7 +19,7 @@ descendants that do not fit into any other documentation category such as,
 for example, show methods.
 }
 \examples{
-example(read10xVisium)
+example(SpatialExperiment)
 spe
 }
 \author{

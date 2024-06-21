@@ -10,7 +10,7 @@
 \usage{
 \S4method{colData}{SpatialExperiment,DataFrame}(x) <- value
 
-\S4method{colData}{SpatialExperiment,`NULL`}(x) <- value
+\S4method{colData}{SpatialExperiment,NULL}(x) <- value
 }
 \arguments{
 \item{x}{a \code{\link{SpatialExperiment}}}
@@ -35,7 +35,7 @@ retained. In addition, checks are performed against the \code{sample_id}s in
 \code{\link{imgData}}.
 }
 \examples{
-example(read10xVisium)
+example("SpatialExperiment-methods")
 
 # empty replacement retains sample identifiers
 colData(spe) <- NULL
