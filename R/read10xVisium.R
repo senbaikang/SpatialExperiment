@@ -92,6 +92,8 @@ read10xVisium <- function(samples="",
     images="lowres",
     load=TRUE) {
     
+    .Deprecated("VisiumIO::TENxVisium(List)")
+    
     # check if DropletUtils is installed
     if (!requireNamespace("DropletUtils", quietly = TRUE)) {
         warning("DropletUtils package must be installed to use read10xVisium()")

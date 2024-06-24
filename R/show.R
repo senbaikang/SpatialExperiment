@@ -14,7 +14,7 @@
 #' @author Dario Righelli and Helena L. Crowell
 #' 
 #' @examples
-#' example(read10xVisium)
+#' example(SpatialExperiment)
 #' spe
 NULL
 

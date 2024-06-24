@@ -62,10 +62,9 @@ For demonstration of the general class structure, we load an example
 
 ```{r message = FALSE}
 library(SpatialExperiment)
-example(read10xVisium, echo = FALSE)
+example(SpatialExperiment, echo = FALSE)
 spe
 ```
-
 
 ## `spatialCoords`
 
@@ -323,15 +322,16 @@ rd <- S4Vectors::DataFrame(
     sample_id = "foo"))
 ```
 
-Alternatively, the `read10xVisium()` function facilitates the import of 
-*10x Genomics Visium* data to handle one or more samples organized in
-folders reflecting the default *Space Ranger* folder tree organization, 
-as illustrated below (where "raw/filtered" refers to either "raw" or 
-"filtered" to match the `data` argument). Note that the base directory 
-"outs/" from Space Ranger can either be included manually in the paths 
-provided in the `samples` argument, or can be ignored; if ignored, it will 
-be added automatically. The `.h5` files are used if `type = "HDF5"`. (Note 
-that `tissue_positions.csv` was renamed in Space Ranger v2.0.0.)
+Alternatively, `r BiocStyle::Biocpkg("VisiumIO")`'s `TENxVisium/List()` 
+functions facilitate the import of *10x Genomics Visium* data to handle one 
+or more samples organized in folders reflecting the default *Space Ranger* 
+folder tree organization, as illustrated below (where "raw/filtered" refers 
+to either "raw" or "filtered" to match the `data` argument). Note that the 
+base directory "outs/" from Space Ranger can either be included manually in the 
+paths provided in the `sampleFolders` argument, or can be ignored; if ignored, 
+it will be added automatically. (Note that `tissue_positions.csv` was renamed 
+in Space Ranger v2.0.0; the `tissuePattern` argument can be used to specify a
+pattern to match the tissue positions file.)
 
 ```{bash, eval = FALSE}
 sample
@@ -347,31 +347,20 @@ sample
  · · · | — tissue_positions.csv
 ```
 
-Using `read10xVisium()`, the above code to construct the same SPE is reduced to:
+Using `TENxVisiumList()`, the above code to construct the same SPE is reduced to:
 
 ```{r}
-dir <- system.file(
-    file.path("extdata", "10xVisium"),
-    package = "SpatialExperiment")
-
-sample_ids <- c("section1", "section2")
-samples <- file.path(dir, sample_ids, "outs")
-
-(spe10x <- read10xVisium(samples, sample_ids,
-    type = "sparse", data = "raw",
-    images = "lowres", load = FALSE))
+library(VisiumIO)
+dir <- list.dirs(system.file(
+    file.path("extdata", "10xVisium"), 
+    package = "SpatialExperiment"), 
+    recursive = FALSE, full.names = TRUE)
+(ids <- basename(dir))
+(vl <- TENxVisiumList(
+    sampleFolders = dir, sample_ids = ids, 
+    processing = "raw", image = "lowres"))
+(spe10x <- import(vl))
 ```
-
-Or alternatively, omitting the base directory `outs/` from Space Ranger:
-
-```{r}
-samples2 <- file.path(dir, sample_ids)
-
-(spe10x2 <- read10xVisium(samples2, sample_ids,
-    type = "sparse", data = "raw",
-    images = "lowres", load = FALSE))
-```
-
 
 ## Molecule-based
 

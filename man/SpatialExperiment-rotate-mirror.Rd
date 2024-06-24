@@ -90,7 +90,7 @@ Additional details for each type of data attribute are provided below.
 }
 
 \examples{
-example(read10xVisium)
+example(SpatialExperiment)
 
 # rotateCoords(), mirrorCoords(), rotateObject(), and mirrorObject() return a
 # SpatialExperiment, potentially subsetted by sample.

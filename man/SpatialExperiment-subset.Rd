@@ -28,7 +28,7 @@ the remainder of the object.
 }
 
 \examples{
-example(read10xVisium)
+example(SpatialExperiment)
 
 dim(spe)
 
