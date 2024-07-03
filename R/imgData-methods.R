@@ -67,7 +67,7 @@
 #' with modified a \code{raster} matrix.
 #'   
 #' @examples
-#' example(read10xVisium)
+#' example(SpatialExperiment)
 #' 
 #' # 'SpatialImage' accession
 #' (spi <- getImg(spe))

@@ -89,7 +89,7 @@
 #' @return Return value varies depending on method, as described below.
 #' 
 #' @examples
-#' example(read10xVisium)
+#' example(SpatialExperiment)
 #' 
 #' # spatialCoords returns a numeric matrix
 #' head(spatialCoords(spe))

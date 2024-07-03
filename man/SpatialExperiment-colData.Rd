@@ -35,7 +35,7 @@ retained. In addition, checks are performed against the \code{sample_id}s in
 \code{\link{imgData}}.
 }
 \examples{
-example(read10xVisium)
+example(SpatialExperiment)
 
 # empty replacement retains sample identifiers
 colData(spe) <- NULL

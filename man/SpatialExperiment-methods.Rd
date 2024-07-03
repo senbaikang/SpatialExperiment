@@ -159,7 +159,7 @@ methods to rotate and mirror SpatialExperiment objects and their
 }
 
 \examples{
-example(read10xVisium)
+example(SpatialExperiment)
 
 # spatialCoords returns a numeric matrix
 head(spatialCoords(spe))

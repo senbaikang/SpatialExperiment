@@ -1,4 +1,4 @@
-example(read10xVisium, echo = FALSE)
+example(SpatialExperiment, echo = FALSE)
 
 test_that("duplicated sample_ids are made unique with a message", {
     expect_message(new <- cbind(spe, spe))

@@ -45,7 +45,7 @@
 #' Dario Righelli
 #' 
 #' @examples
-#' example(read10xVisium, echo = FALSE)
+#' example(SpatialExperiment)
 #'
 #' # merging with duplicated 'sample_id's
 #' # will automatically assign unique identifiers

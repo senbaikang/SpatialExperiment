@@ -1,4 +1,4 @@
-example(read10xVisium, echo = FALSE)
+example(SpatialExperiment, echo = FALSE)
 
 test_that("molecules()/<- gets/sets assay(., 'molecules')", {
     tmp <- spe

@@ -4,8 +4,17 @@
 # - NULL return first available entry
 # - character string returns matching entry(ies)
 .get_img_idx <- function(x, sample_id=NULL, image_id=NULL) {
-    # TODO: validity checks
     img <- imgData(x)
+    for (i in c("sample_id", "image_id")) {
+        j <- get(i)
+        if (is.factor(j) || is.numeric(j))
+            assign(i, as.character(j))
+        if (!(is.null(j) || j %in% img[[i]] ||
+            length(j) == 1 && is.logical(j)))
+            stop(sprintf(c(
+                "'%s' invalid; should be NULL, TRUE/FALSE,",
+                " or matching entries in imgData(.)$%s"), i))
+    }
     if (is.character(sample_id) && is.character(image_id)) {
         sid <- img$sample_id == sample_id
         iid <- img$image_id == image_id

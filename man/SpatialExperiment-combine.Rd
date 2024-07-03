@@ -51,7 +51,7 @@ Refer to \code{?\link[base]{cbind}} for the interpretation of
 }
 
 \examples{
-example(read10xVisium, echo = FALSE)
+example(SpatialExperiment)
 
 # merging with duplicated 'sample_id's
 # will automatically assign unique identifiers

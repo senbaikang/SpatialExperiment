@@ -1,4 +1,4 @@
-example(read10xVisium, echo = FALSE)
+example(SpatialExperiment, echo = FALSE)
 
 test_that("missing i/j retains all", {
     expect_identical(spe, spe[, ])

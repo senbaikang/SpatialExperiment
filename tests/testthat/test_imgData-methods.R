@@ -1,4 +1,4 @@
-example(read10xVisium, echo = FALSE)
+example(SpatialExperiment, echo = FALSE)
 
 test_that("getImg/imgRaster/Source w/o imgData return NULL", {
     x <- spe
@@ -26,6 +26,16 @@ test_that("getImg,sample_id=image_id=TRUE returns a list", {
     y <- imgData(spe)$data
     expect_is(x, "list")
     expect_identical(x, y)
+})
+
+test_that("getImg handles non-character sample/image_id (#151)", {
+    . <- (spe$sample_id <- factor(spe$sample_id))[1]
+    expect_silent(getImg(spe, sample_id=.))
+    . <- (spe$sample_id <- as.integer(spe$sample_id))[1]
+    expect_silent(getImg(spe, sample_id=.))
+    . <- imgData(spe)$image_id <- 1
+    expect_silent(getImg(spe, image_id=.))
+    expect_silent(getImg(spe, image_id=as.factor(.)))
 })
 
 # addImg -----------------------------------------------------------------------
